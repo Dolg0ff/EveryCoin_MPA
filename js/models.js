@@ -30,7 +30,6 @@ class Account{
 		this.balance = balance;
 		this.userId = userId;
 	}
-	
 }
 
 class Transaction{
