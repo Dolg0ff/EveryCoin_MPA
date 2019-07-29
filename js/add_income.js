@@ -1,24 +1,6 @@
 const addIncome = document.querySelector('.addIncome');
 addIncome.addEventListener('click', AddIncome);
 
-class Account{
-    constructor(name, id, type, date, balance,userId){
-    this.name = "name";
-    this.id = Math.random().toString(36).slice(2);
-    this.type = "Income";
-    this.date = new Date();
-    this.balance = "count";
-    this.userId = Math.random().toString(36).slice(2);
-    }
-    get addIncomeAcc() {
-    return `${this.name} ${this.id} ${this.type} ${this.date} ${this.account} ${this.userId}`;
-  }
-    
-    set addIncomeAcc(newValue) {
-    [this.name, this.balance] = newValue.split(' ');
-  }
-}
-
 function AddIncome(event) {
     event.preventDefault();
     const formIncome = document.getElementById('formIncome');
@@ -33,13 +15,13 @@ function AddIncome(event) {
 
 let arrayIncome = [
     {
-        name: 'Кошелек',
-        count: 10000,
+        name: 'Зарплата',
+        count: 100000,
     },
 
     {
-        name: 'Банковский счет',
-        count: 100000,
+        name: 'Инвестиции',
+        count: 20000,
     },
 ]
 
@@ -60,14 +42,7 @@ function renderIncomeTable(){
     incomeTable.innerHTML = html;
 }
 
-    //function AddIncome() {
-    //let account = new Account();
-    //let addName = document.getElementById('name').value;
-    //let addCount = document.getElementById('count').value; 
-    //account.addIncomeAcc = addName+' '+addCount;
-
-    //console.log(account);
-//}
+    
 
     
 

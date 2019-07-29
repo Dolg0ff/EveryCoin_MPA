@@ -7,7 +7,7 @@
 <body>
   <div> 
     <h2>Every Coin</h2>
-    <a>Ivanov@gmail.com</a></div></br> 
+    <a>Ivanov@gmail.com</a></div>
       
       <h3>Income</h3>
 
@@ -19,7 +19,7 @@
           <div>
               <input name="count" id="count" placeholder="count" type="text">
           </div>
-          <button class="addIncome">Add income</button></br>
+          <button class="addIncome">Add</button></br>
         </form>
         </div>
 
@@ -38,7 +38,20 @@
                 </tbody>
         </table>
 
-      <h3>Accounts</h3><a href="../html/add_account.html">Add<a/><br>
+        <h3>Accounts</h3>
+
+        <div>
+        <form id="formAccount">
+          <div>
+              <input name="name" id="name" placeholder="name" required="required" type="text">
+          </div>
+          <div>
+              <input name="count" id="count" placeholder="count" type="text">
+          </div>
+          <button class="addAccount">Add</button></br>
+        </form>
+        </div>
+
         <table>
             <thead> 
                 <tr>
@@ -46,7 +59,7 @@
                     <th>Balance</th>
                 </tr>
             </thead>
-                <tbody>
+                <tbody id="accountTable">
                     <tr>
                         <td>Name</td>
                         <td>Balance</td>
@@ -54,7 +67,20 @@
                 </tbody>
         </table>
 
-      <h3>Expenses</h3><a href="../html/add_outcome.html">Add<a/><br>
+      <h3>Expenses</h3>
+
+      <div>
+        <form id="formOutcome">
+          <div>
+              <input name="name" id="name" placeholder="name" required="required" type="text">
+          </div>
+          <div>
+              <input name="count" id="count" placeholder="count" type="text">
+          </div>
+          <button class="addOutcome">Add</button></br>
+        </form>
+        </div>
+
         <table>
             <thead>
                 <tr>
@@ -62,7 +88,7 @@
                     <th>Balance</th>
                 </tr>
             </thead>
-                <tbody>
+                <tbody id="outcomeTable">
                     <tr>
                         <td>Name</td>
                         <td>Balance</td>
@@ -84,7 +110,7 @@
             <div>
                 <input name="comment" placeholder="Comment" type="text">
             </div>
-            <button class="addTransaction">Add transaction</button></br>
+            <button class="addTransaction">Add</button></br>
         </form>
       </div>
 
@@ -110,9 +136,10 @@
                 </tbody>
         </table>
   </div>
-
-<script src="../js/add_transaction.js"></script>
 <script src="../js/add_income.js"></script>
+<script src="../js/add_account.js"></script>
+<script src="../js/add_outcome.js" type="text/javascript"></script>
+<script src="../js/add_transaction.js"></script>
 </body>
 </html>
 
