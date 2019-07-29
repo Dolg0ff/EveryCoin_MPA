@@ -19,14 +19,55 @@ class Account{
   }
 }
 
-    function AddIncome() {
-    let account = new Account();
-    let addName = document.getElementById('name').value;
-    let addCount = document.getElementById('count').value; 
-    account.addIncomeAcc = addName+' '+addCount;
-
-    console.log(account);
+function AddIncome(event) {
+    event.preventDefault();
+    const formIncome = document.getElementById('formIncome');
+    arrayIncome.push({
+        name: formIncome.name.value,
+        count: formIncome.count.value,
+    });
+    console.log(arrayIncome);
+    renderIncomeTable();
+    formIncome.reset();
 }
+
+let arrayIncome = [
+    {
+        name: 'Кошелек',
+        count: 10000,
+    },
+
+    {
+        name: 'Банковский счет',
+        count: 100000,
+    },
+]
+
+function renderIncomeTable(){
+
+    let html = '';
+
+    for(let i = 0; i<arrayIncome.length; i++){
+        const row = arrayIncome[i];
+        html +=  `
+    <tr>
+        <td>${row.name}</td>
+        <td>${row.count}</td>
+    </tr>
+    `;
+
+    }
+    incomeTable.innerHTML = html;
+}
+
+    //function AddIncome() {
+    //let account = new Account();
+    //let addName = document.getElementById('name').value;
+    //let addCount = document.getElementById('count').value; 
+    //account.addIncomeAcc = addName+' '+addCount;
+
+    //console.log(account);
+//}
 
     
 
