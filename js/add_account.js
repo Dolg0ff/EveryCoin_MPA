@@ -9,7 +9,7 @@ function AddAccount(event) {
         count: formAccount.count.value,
     });
     console.log(arrayAccount);
-    renderAccountTable();
+    renderAccountTable(); 
     formAccount.reset();
 }
 

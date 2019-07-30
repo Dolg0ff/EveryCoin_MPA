@@ -8,7 +8,7 @@ function AddIncome(event) {
         name: formIncome.name.value,
         count: formIncome.count.value,
     });
-    console.log(arrayIncome);
+    console.log(arrayIncome); 
     renderIncomeTable();
     formIncome.reset();
 }

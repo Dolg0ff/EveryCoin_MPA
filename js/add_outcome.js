@@ -8,7 +8,7 @@ function AddOutcome(event) {
         name: formOutcome.name.value,
         count: formOutcome.count.value,
     });
-    console.log(arrayOutcome);
+    console.log(arrayOutcome); 
     renderOutcomeTable();
     formOutcome.reset();
 }

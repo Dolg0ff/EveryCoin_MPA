@@ -12,7 +12,7 @@ function AddTransaction(event) {
     });
     console.log(array);
     renderTransactionsTable();
-    formTransaction.reset();
+    formTransaction.reset(); 
 }
 
 let array = [
