@@ -7,20 +7,13 @@ function addAccount(event) {
     name: formAccount.name.value,
     count: formAccount.count.value,
   });
-  console.log(arrayAccount);
+  var serialArrayAccount = JSON.stringify(arrayAccount);
+  localStorage.setItem("accountKey", serialArrayAccount);
+  var returnArrayAccount = JSON.parse(localStorage.getItem("accountKey"));
   renderAccountTable(); 
   formAccount.reset();
 }
-let arrayAccount = [
-  {
-    name: 'Кошелек',
-    count: 10000,
-  },
-  {
-    name: 'Банковский счет',
-    count: 100000,
-  },
-]
+let arrayAccount = []
 function renderAccountTable(){
   let html = '';
   for (let i = 0, max = arrayAccount.length; i < max; i++){

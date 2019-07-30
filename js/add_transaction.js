@@ -3,17 +3,17 @@ _addTransaction.addEventListener('click', addTransaction);
 function addTransaction(event) {
   event.preventDefault();
   const formTransaction = document.getElementById('formTransaction');
-  array.push({
+  arrayTransaction.push({
     fromAccountName: formTransaction.from.value,
     toAccountName: formTransaction.to.value,
     count: formTransaction.count.value,
     comment: formTransaction.comment.value,
   });
-  console.log(array);
+  console.log(arrayTransaction);
   renderTransactionsTable();
   formTransaction.reset(); 
 }
-let array = [
+let arrayTransaction = [
   {
       fromAccountName: 'Кошелек',
       toAccountName: 'Транспорт',
@@ -29,8 +29,8 @@ let array = [
 ]
 function renderTransactionsTable(){
   let html = '';
-  for (let i = 0, max = array.length; i < max; i++){
-    const row = array[i];
+  for (let i = 0, max = arrayTransaction.length; i < max; i++){
+    const row = arrayTransaction[i];
     html += `
   <tr>
     <td>${row.fromAccountName}</td>
