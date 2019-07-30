@@ -25,8 +25,8 @@ let array = [
 
     {
         fromAccountName: 'Кошелек',
-        toAccountName: 'Транспорт',
-        count: 1000,
+        toAccountName: 'Коммунальные услуги',
+        count: 5000,
         comment: 'Июнь',
     },
 ]
@@ -43,7 +43,6 @@ function renderTransactionsTable(){
         <td>${row.toAccountName}</td>
         <td>${row.count}</td>
         <td>${row.comment}</td>
-        <td>Total</td>
     </tr>
     `;
 
