@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const addTransaction = document.querySelector('.addTransaction');
 addTransaction.addEventListener('click', AddTransaction);
 
@@ -13,6 +14,22 @@ function AddTransaction(event) {
     console.log(array);
     renderTransactionsTable();
     formTransaction.reset(); 
+=======
+const _addTransaction = document.querySelector('.addTransaction');
+_addTransaction.addEventListener('click', addTransaction);
+
+function addTransaction(event) {
+  event.preventDefault();
+  const formTransaction = document.getElementById('formTransaction');
+  arrayTransaction.push({
+    fromAccountName: formTransaction.from.value,
+    toAccountName: formTransaction.to.value,
+    count: formTransaction.count.value,
+    comment: formTransaction.comment.value,
+  });
+  renderTransactionsTable();
+  formTransaction.reset(); 
+>>>>>>> Stashed changes
 }
 
 let array = [

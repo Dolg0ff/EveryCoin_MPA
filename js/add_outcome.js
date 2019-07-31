@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const addOutcome = document.querySelector('.addOutcome');
 addOutcome.addEventListener('click', AddOutcome);
 
@@ -11,6 +12,20 @@ function AddOutcome(event) {
     console.log(arrayOutcome); 
     renderOutcomeTable();
     formOutcome.reset();
+=======
+const _addOutcome = document.querySelector('.addOutcome');
+_addOutcome.addEventListener('click', addOutcome);
+
+function addOutcome(event) {
+  event.preventDefault();
+  const formOutcome = document.getElementById('formOutcome');
+  arrayOutcome.push({
+    name: formOutcome.name.value,
+    count: formOutcome.count.value,
+  });
+  renderOutcomeTable();
+  formOutcome.reset();
+>>>>>>> Stashed changes
 }
 
 let arrayOutcome = [

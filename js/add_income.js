@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const addIncome = document.querySelector('.addIncome');
 addIncome.addEventListener('click', AddIncome);
 
@@ -11,6 +12,20 @@ function AddIncome(event) {
     console.log(arrayIncome); 
     renderIncomeTable();
     formIncome.reset();
+=======
+const _addIncome = document.querySelector('.addIncome');
+_addIncome.addEventListener('click', addIncome);
+
+function addIncome(event) {
+  event.preventDefault();
+  const formIncome = document.getElementById('formIncome');
+  arrayIncome.push({
+    name: formIncome.name.value,
+    count: formIncome.count.value,
+  }); 
+  renderIncomeTable();
+  formIncome.reset();
+>>>>>>> Stashed changes
 }
 
 let arrayIncome = [

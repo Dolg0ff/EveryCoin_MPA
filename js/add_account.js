@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const addAccount = document.querySelector('.addAccount');
 addAccount.addEventListener('click', AddAccount);
 
@@ -24,6 +25,25 @@ let arrayAccount = [
         count: 100000,
     },
 ]
+=======
+const _addAccount = document.querySelector('.addAccount');
+_addAccount.addEventListener('click', addAccount);
+
+function addAccount(event) {
+  event.preventDefault();
+  const formAccount = document.getElementById('formAccount');
+  arrayAccount.push({
+    name: formAccount.name.value,
+    count: formAccount.count.value,
+  });
+  let serialArrayAccount = JSON.stringify(arrayAccount);
+  localStorage.setItem("accountKey", serialArrayAccount);
+  const arrayAccount = JSON.parse(localStorage.getItem("accountKey"));
+  renderAccountTable(); 
+  formAccount.reset();
+}
+let arrayAccount = []
+>>>>>>> Stashed changes
 
 function renderAccountTable(){
 
