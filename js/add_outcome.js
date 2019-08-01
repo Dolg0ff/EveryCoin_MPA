@@ -1,5 +1,6 @@
 const _addOutcome = document.querySelector('.addOutcome');
 _addOutcome.addEventListener('click', addOutcome);
+
 function addOutcome(event) {
   event.preventDefault();
   const formOutcome = document.getElementById('formOutcome');
@@ -7,30 +8,13 @@ function addOutcome(event) {
     name: formOutcome.name.value,
     count: formOutcome.count.value,
   });
-  console.log(arrayOutcome); 
+  let serialArrayOucome = JSON.stringify(arrayOutcome);
+  localStorage.setItem('outcomeKey', serialArrayOucome);
   renderOutcomeTable();
   formOutcome.reset();
 }
-let arrayOutcome = [
-  {
-    name: 'Продукты',
-    count: 2000,
-  },
-  {
-    name: 'Транспорт',
-    count: 3000,
-  },
-]
-function renderOutcomeTable(){
-  let html = '';
-  for (let i = 0, max = arrayOutcome.length; i < max; i++){
-    const row = arrayOutcome[i];
-    html +=  `
-  <tr>
-    <td>${row.name}</td>
-    <td>${row.count}</td>
-  </tr>
-  `;
-  }
-  outcomeTable.innerHTML = html;
+const arrayOutcome = JSON.parse(localStorage.getItem('outcomeKey'));
+
+function renderOutcomeTable() {
+  renderTable(arrayOutcome, outcomeTable);
 }

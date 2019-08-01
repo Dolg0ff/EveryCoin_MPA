@@ -1,5 +1,6 @@
 const _addTransaction = document.querySelector('.addTransaction');
 _addTransaction.addEventListener('click', addTransaction);
+
 function addTransaction(event) {
   event.preventDefault();
   const formTransaction = document.getElementById('formTransaction');
@@ -9,27 +10,16 @@ function addTransaction(event) {
     count: formTransaction.count.value,
     comment: formTransaction.comment.value,
   });
-  console.log(arrayTransaction);
+  let serialArrayTransaction = JSON.stringify(arrayTransaction);
+  localStorage.setItem('transactionKey', serialArrayTransaction);
   renderTransactionsTable();
-  formTransaction.reset(); 
+  formTransaction.reset();
 }
-let arrayTransaction = [
-  {
-      fromAccountName: 'Кошелек',
-      toAccountName: 'Транспорт',
-      count: 1000,
-      comment: 'Июнь',
-  },
-  {
-      fromAccountName: 'Кошелек',
-      toAccountName: 'Коммунальные услуги',
-      count: 5000,
-      comment: 'Июнь',
-  },
-]
-function renderTransactionsTable(){
+const arrayTransaction = JSON.parse(localStorage.getItem('transactionKey'));
+
+function renderTransactionsTable() {
   let html = '';
-  for (let i = 0, max = arrayTransaction.length; i < max; i++){
+  for (let i = 0, max = arrayTransaction.length; i < max; i++) {
     const row = arrayTransaction[i];
     html += `
   <tr>
