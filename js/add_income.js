@@ -7,24 +7,17 @@ function addIncome(event) {
   arrayIncome.push({
     name: formIncome.name.value,
     count: formIncome.count.value,
-  }); 
+  });
+  let serialArrayIncome = JSON.stringify(arrayIncome);
+  localStorage.setItem('incomeKey', serialArrayIncome);
   renderIncomeTable();
   formIncome.reset();
 }
-let arrayIncome = [
-  {
-    name: 'Зарплата',
-    count: 100000,
-  },
-  {
-    name: 'Инвестиции',
-    count: 20000,
-  },
-]
+const arrayIncome = JSON.parse(localStorage.getItem('incomeKey'));
 
-function renderIncomeTable(){
+function renderIncomeTable() {
   let html = '';
-  for(let i = 0; i<arrayIncome.length; i++){
+  for (let i = 0, max = arrayIncome.length; i < max; i++) {
     const row = arrayIncome[i];
     html += `
   <tr>
@@ -36,9 +29,9 @@ function renderIncomeTable(){
   incomeTable.innerHTML = html;
 }
 
-    
 
-    
+
+
 
 
 

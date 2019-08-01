@@ -10,30 +10,18 @@ function addTransaction(event) {
     count: formTransaction.count.value,
     comment: formTransaction.comment.value,
   });
+  let serialArrayTransaction = JSON.stringify(arrayTransaction);
+  localStorage.setItem('transactionKey', serialArrayTransaction);
   renderTransactionsTable();
-  formTransaction.reset(); 
-  
+  formTransaction.reset();
+
 }
+const arrayTransaction = JSON.parse(localStorage.getItem('transactionKey'));
 
-let arrayTransaction = [
-  {
-    fromAccountName: 'Кошелек',
-    toAccountName: 'Транспорт',
-    count: 1000,
-    comment: 'Июнь',
-  },
-  {
-    fromAccountName: 'Кошелек',
-    toAccountName: 'Коммунальные услуги',
-    count: 5000,
-    comment: 'Июнь',
-  },
-]
-
-function renderTransactionsTable(){
+function renderTransactionsTable() {
   let html = '';
-  for(let i = 0; i<array.length; i++){
-    const row = array[i];
+  for (let i = 0, max = arrayTransaction.length; i < max; i++) {
+    const row = arrayTransaction[i];
     html += `
   <tr>
     <td>${row.fromAccountName}</td>

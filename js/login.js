@@ -1,7 +1,9 @@
 const signUpButton = document.querySelector('.signUpButton');
-signUpButton.addEventListener('click', SignUp);
+signUpButton.addEventListener('click', signUp);
 
-function SignUp() {
-	console.log("Регистрация"); 
+function signUp() {
+  console.log("Регистрация");
 }
+
+
 

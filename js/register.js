@@ -1,6 +1,7 @@
 const forgotButton = document.querySelector('.forgotButton');
-forgotButton.addEventListener('click', ForgotPassword);
+forgotButton.addEventListener('click', forgotPassword);
 
-function ForgotPassword() { 
-	console.log("Пароль");
+var LOGINNAMESPACE = {};
+function forgotPassword() {
+  console.log("Пароль");
 }

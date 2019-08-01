@@ -9,23 +9,12 @@ function addAccount(event) {
     count: formAccount.count.value,
   });
   let serialArrayAccount = JSON.stringify(arrayAccount);
-  localStorage.setItem("accountKey", serialArrayAccount);
-  const arrayAccount = JSON.parse(localStorage.getItem("accountKey"));
-  renderAccountTable(); 
+  localStorage.setItem('accountKey', serialArrayAccount);
+  renderAccountTable();
   formAccount.reset();
 }
-let arrayAccount = []
+const arrayAccount = JSON.parse(localStorage.getItem('accountKey'));
 
 function renderAccountTable(){
-  let html = '';
-  for(let i = 0; i<arrayAccount.length; i++){
-    const row = arrayAccount[i];
-    html += `
-  <tr>
-    <td>${row.name}</td>
-    <td>${row.count}</td>
-  </tr>
-  `;
-  }
-  accountTable.innerHTML = html;
+  renderTable(arrayAccount, accountTable);
 }
