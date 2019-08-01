@@ -14,6 +14,7 @@ function addTransaction(event) {
   localStorage.setItem('transactionKey', serialArrayTransaction);
   renderTransactionsTable();
   formTransaction.reset();
+
 }
 const arrayTransaction = JSON.parse(localStorage.getItem('transactionKey'));
 
