@@ -16,17 +16,7 @@ function addIncome(event) {
 const arrayIncome = JSON.parse(localStorage.getItem('incomeKey'));
 
 function renderIncomeTable() {
-  let html = '';
-  for (let i = 0, max = arrayIncome.length; i < max; i++) {
-    const row = arrayIncome[i];
-    html += `
-  <tr>
-    <td>${row.name}</td>
-    <td>${row.count}</td>
-  </tr>
-  `;
-  }
-  incomeTable.innerHTML = html;
+  renderTable(arrayIncome, incomeTable);
 }
 
 
