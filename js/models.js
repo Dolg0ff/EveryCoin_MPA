@@ -60,7 +60,3 @@ class Transaction {
     this.comment = comment;
   }
 }
-
-
-
-

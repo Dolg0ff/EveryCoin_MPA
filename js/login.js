@@ -4,6 +4,3 @@ signUpButton.addEventListener('click', signUp);
 function signUp() {
   console.log("Регистрация");
 }
-
-
-
