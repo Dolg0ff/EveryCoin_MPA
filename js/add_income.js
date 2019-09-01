@@ -1,27 +1,7 @@
 const _addIncome = document.querySelector('.addIncome');
 _addIncome.addEventListener('click', addIncome);
 
-function addIncome(event) {
-  event.preventDefault();
-  const formIncome = document.getElementById('formIncome');
-  arrayIncome.push({
-    name: formIncome.name.value,
-    count: formIncome.count.value,
-  });
-  let serialArrayIncome = JSON.stringify(arrayIncome);
-  localStorage.setItem('incomeKey', serialArrayIncome);
-  renderIncomeTable();
-  formIncome.reset();
+function addIncome() {
+  add(event, 'formIncome', 'IncomeKey', arrayIncome, incomeTable);
 }
 const arrayIncome = JSON.parse(localStorage.getItem('incomeKey'));
-
-function renderIncomeTable() {
-  renderTable(arrayIncome, incomeTable);
-}
-
-
-
-
-
-
-
