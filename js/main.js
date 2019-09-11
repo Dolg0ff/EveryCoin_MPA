@@ -13,7 +13,7 @@ function renderTable(array, tableElement) {
 
 function add(event, form, key, arrayEssence, essenceTable) {
   event.preventDefault();
-  const formEssence = document.getElementById(form);
+  const formEssence = document.querySelector('#' + form);
   if(formEssence.name.value != '' && formEssence.count.value != 0){
     arrayEssence.push({
     name: formEssence.name.value,
